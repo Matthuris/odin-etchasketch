@@ -20,3 +20,6 @@ body {
   flex: auto;
   border: solid black;
 }
+.filled {
+  background-color: black;
+}
