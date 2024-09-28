@@ -1,4 +1,5 @@
 const init = function () {
+  const button = document.querySelector("button");
   const container = document.querySelector(".container");
   const newRow = document.createElement("div");
   container.appendChild(newRow);
@@ -17,6 +18,9 @@ const init = function () {
     if (e.target.classList.contains("square")) {
       e.target.classList.add("filled");
     }
+  });
+  button.addEventListener("click", function () {
+    prompt("Did it work?");
   });
 };
 
