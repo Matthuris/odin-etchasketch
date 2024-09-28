@@ -14,6 +14,12 @@ const init = function () {
     const cloneRow = row.cloneNode(true);
     container.appendChild(cloneRow);
   }
+  const square = document.querySelector(".square");
+  container.addEventListener("click", function (e) {
+    if (e.target.classList.contains("square")) {
+      e.target.classList.toggle("filled");
+    }
+  });
 };
 
 init();
