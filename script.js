@@ -1,6 +1,5 @@
-const container = document.querySelector(".container");
-
 const init = function () {
+  const container = document.querySelector(".container");
   const newRow = document.createElement("div");
   container.appendChild(newRow);
   for (let i = 1; i <= 16; i++) {
@@ -14,6 +13,11 @@ const init = function () {
     const cloneRow = row.cloneNode(true);
     container.appendChild(cloneRow);
   }
+  container.addEventListener("mouseover", function (e) {
+    if (e.target.classList.contains("square")) {
+      e.target.classList.add("filled");
+    }
+  });
 };
 
 init();
