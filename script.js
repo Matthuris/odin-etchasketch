@@ -30,7 +30,9 @@ const init = function () {
   });
   getResponse = function () {
     let response = +prompt("How many squares per side? (1-100");
-    if (Number.isInteger(response) && response > 0 && response <= 100) {
+    if (response === 0) {
+      return;
+    } else if (Number.isInteger(response) && response > 0 && response <= 100) {
       return response;
     } else {
       alert("Must be a number between 1 and 100!");
