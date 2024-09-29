@@ -22,8 +22,11 @@ const init = function () {
       e.target.classList.add("filled");
     }
   });
+  getSize = function () {
+    prompt("How many squares per side?");
+  };
   button.addEventListener("click", function () {
-    prompt("Did it work?");
+    getSize();
   });
 };
 
