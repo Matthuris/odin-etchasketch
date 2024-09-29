@@ -22,11 +22,17 @@ const init = function () {
       e.target.classList.add("filled");
     }
   });
-  getSize = function () {
-    prompt("How many squares per side?");
+  getResponse = function () {
+    let response = +prompt("How many squares per side? (1-100");
+    if (Number.isInteger(response) && response > 0 && response <= 100) {
+      return response;
+    } else {
+      alert("Must be a number between 1 and 100!");
+      getResponse();
+    }
   };
   button.addEventListener("click", function () {
-    getSize();
+    const size = getResponse();
   });
 };
 
