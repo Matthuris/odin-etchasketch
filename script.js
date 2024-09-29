@@ -1,22 +1,28 @@
 const init = function () {
-  const button = document.querySelector("button");
   const container = document.querySelector(".container");
+  const button = document.querySelector("button");
+  const grid = document.querySelector(".grid");
   const createGrid = function () {
-    const newRow = document.createElement("div");
+    const newDiv = document.createElement("div");
+    container.appendChild(newDiv);
+    container.className = "grid";
     for (let i = 1; i <= 16; i++) {
-      container.appendChild(newRow);
+      const grid = document.querySelector(".grid");
+      grid.appendChild(newDiv);
       const newSquare = document.createElement("div");
-      newRow.appendChild(newSquare);
+      newDiv.appendChild(newSquare);
       newSquare.className = "square";
     }
-    newRow.className = "row";
+    newDiv.className = "row";
     const row = document.querySelector(".row");
     for (let j = 1; j < 16; j++) {
+      const grid = document.querySelector(".grid");
       const cloneRow = row.cloneNode(true);
-      container.appendChild(cloneRow);
+      grid.appendChild(cloneRow);
     }
   };
   createGrid();
+
   container.addEventListener("mouseover", function (e) {
     if (e.target.classList.contains("square")) {
       e.target.classList.add("filled");
