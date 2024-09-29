@@ -2,23 +2,23 @@ const init = function () {
   const container = document.querySelector(".container");
   const button = document.querySelector("button");
   const grid = document.querySelector(".grid");
+
   const createGrid = function () {
-    const newDiv = document.createElement("div");
-    container.appendChild(newDiv);
-    container.className = "grid";
+    const newGrid = document.createElement("div");
+    container.appendChild(newGrid);
+    newGrid.className = "grid";
+    const newRow = document.createElement("div");
+    newGrid.appendChild(newRow);
+    newRow.className = "row";
     for (let i = 1; i <= 16; i++) {
-      const grid = document.querySelector(".grid");
-      grid.appendChild(newDiv);
       const newSquare = document.createElement("div");
-      newDiv.appendChild(newSquare);
+      newRow.appendChild(newSquare);
       newSquare.className = "square";
     }
-    newDiv.className = "row";
-    const row = document.querySelector(".row");
+
     for (let j = 1; j < 16; j++) {
-      const grid = document.querySelector(".grid");
-      const cloneRow = row.cloneNode(true);
-      grid.appendChild(cloneRow);
+      const cloneRow = newRow.cloneNode(true);
+      newGrid.appendChild(cloneRow);
     }
   };
   createGrid();
