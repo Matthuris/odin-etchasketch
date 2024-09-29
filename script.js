@@ -2,7 +2,7 @@ const init = function () {
   const container = document.querySelector(".container");
   const button = document.querySelector("button");
 
-  createGrid = function () {
+  createGrid = function (size) {
     const newGrid = document.createElement("div");
     container.appendChild(newGrid);
     newGrid.className = "grid";
@@ -10,13 +10,13 @@ const init = function () {
     newGrid.appendChild(newRow);
     newRow.className = "row";
 
-    for (let i = 1; i <= 16; i++) {
+    for (let i = 1; i <= size; i++) {
       const newSquare = document.createElement("div");
       newRow.appendChild(newSquare);
       newSquare.className = "square";
     }
 
-    for (let j = 1; j < 16; j++) {
+    for (let j = 1; j < size; j++) {
       const cloneRow = newRow.cloneNode(true);
       newGrid.appendChild(cloneRow);
     }
@@ -48,6 +48,7 @@ const init = function () {
 
   button.addEventListener("click", function () {
     const size = getResponse();
+    createGrid(size);
   });
 };
 
