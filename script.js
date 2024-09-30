@@ -1,10 +1,11 @@
 const init = function () {
   const container = document.querySelector(".container");
+  const content = document.querySelector(".content");
   const button = document.querySelector("button");
 
   createGrid = function (size) {
     const newGrid = document.createElement("div");
-    container.appendChild(newGrid);
+    content.appendChild(newGrid);
     newGrid.className = "grid";
     const newRow = document.createElement("div");
     newGrid.appendChild(newRow);
@@ -36,10 +37,10 @@ const init = function () {
 
   deleteGrid = function () {
     const grid = document.querySelector(".grid");
-    if (grid) container.removeChild(grid);
+    if (grid) content.removeChild(grid);
   };
 
-  container.addEventListener("mouseover", function (e) {
+  content.addEventListener("mouseover", function (e) {
     if (e.target.classList.contains("square")) {
       e.target.classList.add("filled");
     }
