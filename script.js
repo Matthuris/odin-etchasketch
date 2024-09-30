@@ -11,44 +11,33 @@ const init = function () {
     newGrid.appendChild(newRow);
     newRow.className = "row";
 
-    for (let i = 1; i <= size; i++) {
+    for (let i = 1; i <= 100; i++) {
       const newSquare = document.createElement("div");
       newRow.appendChild(newSquare);
       newSquare.className = "square";
     }
 
-    for (let j = 1; j < size; j++) {
+    for (let j = 1; j < 100; j++) {
       const cloneRow = newRow.cloneNode(true);
       newGrid.appendChild(cloneRow);
     }
   };
-  getResponse = function () {
-    let response = +prompt("How many squares per side? (1-100)");
-    if (response === 0) {
-      return;
-    } else if (Number.isInteger(response) && response > 0 && response <= 100) {
-      deleteGrid();
-      return response;
-    } else {
-      alert("Must be a number between 1 and 100!");
-      getResponse();
-    }
-  };
+  createGrid();
 
   deleteGrid = function () {
     const grid = document.querySelector(".grid");
     if (grid) content.removeChild(grid);
   };
 
-  content.addEventListener("mouseover", function (e) {
+  content.addEventListener("mousedown", function (e) {
     if (e.target.classList.contains("square")) {
-      e.target.classList.add("filled");
+      e.target.classList.toggle("filled");
     }
   });
 
   button.addEventListener("click", function () {
-    const size = getResponse();
-    createGrid(size);
+    deleteGrid();
+    createGrid();
   });
 };
 
