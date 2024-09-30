@@ -36,9 +36,8 @@ const init = function () {
 
   deleteGrid = function () {
     const grid = document.querySelector(".grid");
-    container.removeChild(grid);
+    if (grid) container.removeChild(grid);
   };
-  createGrid();
 
   container.addEventListener("mouseover", function (e) {
     if (e.target.classList.contains("square")) {
