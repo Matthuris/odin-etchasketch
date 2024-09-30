@@ -40,9 +40,16 @@ const init = function () {
     if (grid) content.removeChild(grid);
   };
 
+  rndRGB = function () {
+    rndNum = function () {
+      return Math.floor(Math.random() * 256);
+    };
+    return `${rndNum()}, ${rndNum()}, ${rndNum()}`;
+  };
   content.addEventListener("mouseover", function (e) {
     if (e.target.classList.contains("square")) {
-      e.target.classList.add("filled");
+      RGB = rndRGB();
+      e.target.style.backgroundColor = `rgb(${RGB})`;
     }
   });
 
