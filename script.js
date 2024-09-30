@@ -22,7 +22,7 @@ const init = function () {
     }
   };
   getResponse = function () {
-    let response = +prompt("How many squares per side? (1-100");
+    let response = +prompt("How many squares per side? (1-100)");
     if (response === 0) {
       return;
     } else if (Number.isInteger(response) && response > 0 && response <= 100) {
