@@ -2,20 +2,23 @@ body {
   margin: 0%;
   padding: 0%;
 }
-
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-.grid {
+.content {
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
   max-height: 100vw;
   max-width: 100vh;
+}
+.grid {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
   border: solid black;
 }
 .row {
@@ -24,7 +27,7 @@ body {
 }
 .square {
   flex: auto;
-  border: solid black;
+  border: 1px solid black;
 }
 .filled {
   background-color: black;
