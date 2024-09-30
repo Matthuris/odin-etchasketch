@@ -1,4 +1,5 @@
 const init = function () {
+  let n = 0;
   const container = document.querySelector(".container");
   const content = document.querySelector(".content");
   const button = document.querySelector("button");
@@ -48,8 +49,9 @@ const init = function () {
   };
   content.addEventListener("mouseover", function (e) {
     if (e.target.classList.contains("square")) {
+      n < 10 ? n++ : null;
       RGB = rndRGB();
-      e.target.style.backgroundColor = `rgb(${RGB})`;
+      e.target.style.backgroundColor = `rgb(${RGB},${n / 10})`;
     }
   });
 
